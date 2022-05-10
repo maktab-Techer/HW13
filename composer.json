@@ -1,0 +1,15 @@
+{
+    "name": "dehghani/maktab_m70_hw13",
+    "autoload": {
+        "psr-4": {
+            "App\\": "App/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Amirhossin Dehghani",
+            "email": "103383658+MonsterDeh@users.noreply.github.com"
+        }
+    ],
+    "require": {}
+}
