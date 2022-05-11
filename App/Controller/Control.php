@@ -16,9 +16,23 @@ class Control{
         $V=new View;
         $V->putNavbar(); 
         $V->show($path );
-
+    }
+    public function Dashboard()
+    {
+        $V=new View;
+        $V->show( 'Dashboard');
+    }
+    public function login()
+    {
+        $V=new View;
+        $V->show( 'login');
+    }public function register()
+    {   
+        $V=new View;
+        $V->show( 'register');
 
     }
+
     public function pagesSite()
     {
         
