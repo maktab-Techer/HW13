@@ -5,7 +5,6 @@ class Control{
     public function _404 ()
     {   
         $V=new View;
-        printf("iauolfhiugha");
         $V->show('_404');
     }
 
