@@ -16,6 +16,7 @@ class Application{
 
     public function get(string $path , $callback)
     {
+        // var_dump($this);
         $this->router->get($path ,$callback);
     }
     public function post(string $path , $callback)
