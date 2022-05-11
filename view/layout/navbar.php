@@ -40,21 +40,7 @@
     </ul>
     <!-- Left links -->
 
-    <div class="d-flex align-items-center">
-      <button type="button" class="btn btn-link px-3 me-2">
-        Login
-      </button>
-      <button type="button" class="btn btn-primary me-3">
-        Sign up for free
-      </button>
-      <a
-        class="btn btn-dark px-3"
-        href="https://github.com/mdbootstrap/mdb-ui-kit"
-        role="button"
-        ><i class="fab fa-github"></i
-      ></a>
-    </div>
-  </div>
+   
   <!-- Collapsible wrapper -->
 </div>
 <!-- Container wrapper -->
