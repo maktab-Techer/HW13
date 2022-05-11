@@ -5,7 +5,7 @@ class View
     private $ViewPath;
         function __construct()
         {
-            $this->ViewPath==dirname(__DIR__ , 2)."/View/";
+            $this->ViewPath=dirname(__DIR__ , 2)."/View/";
             
         }
   public function Show(string $path, array $data = null)
@@ -18,7 +18,10 @@ class View
 
         ob_start();
         include $this->ViewPath . "Main.php";
-        $main = ob_get_clean();
+        $main = ob_get_contents();
+        ob_end_clean();
+
+        ob_start();
         include $this->ViewPath."layout/" . $path . ".php";
         $content = ob_get_contents();
         ob_end_clean();
@@ -28,17 +31,18 @@ class View
 
     public function putNavbar(bool $doPut=true)
     {   
-        var_dump($this->ViewPath);
-        exit;
+        
+        
         ob_start();
         include $this->ViewPath . "Main.php";
-        $main = ob_get_clean();
-        include $this->ViewPath."layout/navbar.php";
-
-        $content =($doPut)? ob_get_contents():" ";
-
+        $main = ob_get_contents();
         ob_end_clean();
 
-        echo str_replace("{{navbar}}", $content, $main);
+        ob_start();
+        include $this->ViewPath."layout/navbar.php";
+        $content = ob_get_contents();
+        ob_end_clean();
+
+        echo str_replace("{{Content}}", $content, $main);
     }
 }

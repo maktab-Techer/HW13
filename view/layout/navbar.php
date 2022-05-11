@@ -3,14 +3,8 @@
 <!-- Container wrapper -->
 <div class="container">
   <!-- Navbar brand -->
-  <a class="navbar-brand me-2" href="https://mdbgo.com/">
-    <img
-      src="https://mdbcdn.b-cdn.net/img/logo/mdb-transaprent-noshadows.webp"
-      height="16"
-      alt="MDB Logo"
-      loading="lazy"
-      style="margin-top: -1px;"
-    />
+  <a class="navbar-brand me-2" href="/">
+   Clinic
   </a>
 
   <!-- Toggle button -->
@@ -31,7 +25,17 @@
     <!-- Left links -->
     <ul class="navbar-nav me-auto mb-2 mb-lg-0">
       <li class="nav-item">
-        <a class="nav-link" href="#">Dashboard</a>
+        
+        <a class="nav-link" href="Dashboard">Dashboard</a>
+        
+        
+        
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="login">login</a>
+      </li>
+      <li class="nav-item">
+       <a class="nav-link" href="register">register</a>
       </li>
     </ul>
     <!-- Left links -->
@@ -56,3 +60,4 @@
 <!-- Container wrapper -->
 </nav>
   <!-- Navbar  -->
+

@@ -39,11 +39,17 @@ class Router {
         $method=$this->request->getMethod();
        
         $callback=$this->paths[$method][$path] ?? false; 
-   
+        $falg=true;
         if($callback==false){
-            echo "not fuond 404";
+             $falg=false;
+
+            http_response_code(404);
+            call_user_func(App\Controller\Control::_404());
         }
+        
+
        
+       if($falg)
         call_user_func($callback);
 
     }
