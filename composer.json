@@ -2,7 +2,8 @@
     "name": "dehghani/maktab_m70_hw13",
     "autoload": {
         "psr-4": {
-            "App\\": "App/"
+            "App\\": "App/" ,
+            "src\\":"src/"
         }
     },
     "authors": [

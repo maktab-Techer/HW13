@@ -4,8 +4,8 @@ namespace App\Core;
  * This class is router
  */
 class Router {
-    private array $paths=[];
-    protected Request $request;
+    public array $paths=[];
+    public Request $request;
 
     public function __construct(Request  $request)
     {
@@ -14,16 +14,18 @@ class Router {
     /**
      * save my GET path whit a callback function
      */
-    public function get($path ,$callback)
+    public function get(string $path , $callback)
     {
         $this->paths['get'][$path]=$callback;
+        return $this;
         
     }
      /**
      * save my POST path whit a callback function
      */
-    public function post($path ,$callback)
-    {
+    public function post(string $path , mixed  $callback)
+    {   
+        
         $this->paths['post'][$path]=$callback;
     }
     /**
@@ -35,12 +37,13 @@ class Router {
     {
         $path=$this->request->getPath();
         $method=$this->request->getMethod();
-        $paths=$this->paths;
-        $callback=$paths[$method][$path] ?? false; 
-        if($paths[$method]==false){
+       
+        $callback=$this->paths[$method][$path] ?? false; 
+   
+        if($callback==false){
             echo "not fuond 404";
         }
-        
+       
         call_user_func($callback);
 
     }

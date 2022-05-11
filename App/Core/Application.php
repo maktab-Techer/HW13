@@ -1,14 +1,27 @@
 <?php
 namespace App\Core;
 class Application{
-    protected Router $router;
-    protected Request $request;
-    protected  function __construct()
+    
+
+
+
+
+    private Router $router;
+    private Request $request;
+    public  function __construct()
     {
-        $this->Router=new Router($this->request);
         $this->request=new Request;
+        $this->router=new Router($this->request);
     }
-   
+
+    public function get(string $path , $callback)
+    {
+        $this->router->get($path ,$callback);
+    }
+    public function post(string $path , $callback)
+    {
+        $this->router->post($path ,$callback);
+    }
     /**
      * run all Application
      */
@@ -19,4 +32,5 @@ class Application{
 
 
     
+	
 }
