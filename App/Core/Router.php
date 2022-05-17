@@ -47,6 +47,7 @@ class Router {
         }
         // var_dump($callback);
 
+        var_dump($callback);
         
        
         call_user_func($callback);
