@@ -1,11 +1,12 @@
 <?php
 namespace App\Controller;
 use Core\View;
-class Control{
+class showController{
     public function _404 ()
     {   
         $V=new View;
         $V->show('_404');
+        
     }
 
     public function home()

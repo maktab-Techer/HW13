@@ -12,5 +12,7 @@
             "email": "103383658+MonsterDeh@users.noreply.github.com"
         }
     ],
-    "require": {}
+    "require": {
+        "opis/database": "^4.1"
+    }
 }
