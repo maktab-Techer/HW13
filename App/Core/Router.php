@@ -43,11 +43,11 @@ class Router {
         if($callback==false){
             http_response_code(404);
             
-            $callback=['App\Controller\Control',"_404"];
+            $callback=['App\Controller\ShowControl',"_404"];
         }
         // var_dump($callback);
 
-        var_dump($callback);
+        $callback=[new $callback[0] ,$callback[1]];
         
        
         call_user_func($callback);

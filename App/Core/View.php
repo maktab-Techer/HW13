@@ -28,6 +28,19 @@ class View
 
         echo str_replace("{{Content}}", $content, $main);
     }
+    public function get_ob(string $path ,string $file='' )
+    {   
+
+        ob_start();
+        include $this->ViewPath. $file."/".$path.".php";
+        $layout = ob_get_contents();
+        ob_end_clean();
+        return $layout;
+    }
+    public function putReplace(string $placeholder, string $content, string $where)
+    {   
+        return str_replace($placeholder, $content,$where);
+    }
 
     public function putNavbar(bool $doPut=true)
     {   

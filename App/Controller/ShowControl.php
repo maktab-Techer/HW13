@@ -1,7 +1,7 @@
 <?php
 namespace App\Controller;
 use App\Core\View;
-class Control{
+class ShowControl{
     public function _404 ()
     {   
         $V=new View;

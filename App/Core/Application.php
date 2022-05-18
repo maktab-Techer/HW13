@@ -1,5 +1,6 @@
 <?php
 namespace App\Core;
+
 class Application{
     
 
@@ -12,6 +13,16 @@ class Application{
     {
         $this->request=new Request;
         $this->router=new Router($this->request);
+    }
+    public static function GETCLASS()
+    {
+        return new self ;
+    }
+    public function GETPROPERTY(string $property)
+    {   
+        
+        return (property_exists($this,$property)) ? 
+        $this->$property : false;
     }
 
     public function get(string $path , $callback)
