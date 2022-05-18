@@ -7,6 +7,7 @@ class showController{
         $V=new View;
         $V->show('_404');
         
+        
     }
 
     public function home()
