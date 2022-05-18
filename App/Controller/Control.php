@@ -1,6 +1,6 @@
 <?php
 namespace App\Controller;
-use App\Core\View;
+use Core\View;
 class Control{
     public function _404 ()
     {   

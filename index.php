@@ -1,7 +1,7 @@
 <?php
 
-use App\Core\Application;
-use App\Core\Router;
+use Core\Application;
+use Core\Router;
 
 require_once __DIR__.'/vendor/autoload.php';
 
