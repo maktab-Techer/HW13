@@ -5,7 +5,7 @@ class View
     private $ViewPath;
         function __construct()
         {
-            $this->ViewPath=dirname(__DIR__ , 2)."/View/";
+            $this->ViewPath=dirname(__DIR__ )."/View/";
             
         }
   public function Show(string $path, array $data = null)
