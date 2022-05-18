@@ -1,11 +1,13 @@
 <?php
 namespace Core;
 class Application{
-    private Router $router;
-    private Request $request;
-    private Response $response;
-    public  function __construct()
-    {
+    private $class;
+    protected Router $router;
+    protected Request $request;
+    protected Response $response;
+    private  function __construct()
+    {   
+        $this->class=$this;
         $this->request=new Request;
         $this->router=new Router($this->request);
         $this->response= new Response();
@@ -28,7 +30,19 @@ class Application{
         $this->router->startRouter();
     }
 
-
+    
+    public static function GETCLASS()
+    {   
+        if(!isset(self::$class)){
+            self::$class = new self;
+        };
+        
+        return self::$class ;
+    }
+    public function GETPROPERTY(string $property) : mixed
+    {
+        return (property_exists($this,$property))? $this->$property : false;
+    }
     
 	
 }
