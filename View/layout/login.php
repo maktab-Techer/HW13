@@ -1,8 +1,8 @@
 <?php
 
-use App\Core\linkScriptRouter;
 
-$linkScript=linkScriptRouter::GETCLASS();
+
+
 $linkScript->
 addLink('login','
 <!-- Font Icon -->
@@ -14,7 +14,8 @@ addScript('login','
 <script src="vendor/jquery/jquery.min.js"></script>
 <script src="js/main.js"></script>
 '
-)
+);
+
 
 ?>
 

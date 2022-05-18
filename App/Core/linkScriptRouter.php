@@ -22,6 +22,7 @@ class linkScriptRouter{
         if(!isset(linkScriptRouter::$request)){
             self::$class= new linkScriptRouter;
         }
+      
         return self::$class;
     }
     public  function link() 
@@ -30,7 +31,7 @@ class linkScriptRouter{
         $linkScrip=$this->linkScrip;
        
         return 
-         (in_array($path,$linkScrip['link'])) ?
+         (in_array($path,$linkScrip)) ?
          $linkScrip['link'][$path] :
          $this->linkScrip['link']['defalt'] ??false ;
     }
@@ -46,11 +47,12 @@ class linkScriptRouter{
     }
     public function addLink(string $path, string $link, bool $defalt=false)
     {   
-        $linkScrip=& $this->linkScrip;
+        $linkScrip= &$this->linkScrip;
         ($defalt)? 
         $linkScrip['link']['defalt']=$link :
         $linkScrip['link'][$path]=$link
        ;
+       
        return $this;
     }
     public function addScript(string $path, string $link,bool $defalt=false)

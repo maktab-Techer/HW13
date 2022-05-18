@@ -1,9 +1,7 @@
 
 <?php
 
-use App\Core\linkScriptRouter;
 
-$linkScript=linkScriptRouter::GETCLASS();
 $linkScript->
 addLink('register','
 <!-- Font Icon -->
@@ -16,9 +14,7 @@ addScript('register','
 <script src="js/main.js"></script>
 '
 );
-echo'<pre>';
-var_dump($linkScript);
-echo'</pre>';
+;
 
 ?>
 <section class="signup">
