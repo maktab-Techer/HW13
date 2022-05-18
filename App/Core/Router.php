@@ -45,10 +45,11 @@ class Router {
             
             $callback=['App\Controller\Control',"_404"];
         }
-        // var_dump($callback);
+       
 
-        var_dump($callback);
         
+        if(is_array($callback))
+        $callback=[new $callback[0] ,$callback[1]];
        
         call_user_func($callback);
 
