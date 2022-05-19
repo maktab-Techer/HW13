@@ -14,6 +14,7 @@ class showController{
     {   
         // some how I must use login ???
         $path="home"   ;
+        
         // echo "hello";
         $V=new View;
         $V->putNavbar(); 
