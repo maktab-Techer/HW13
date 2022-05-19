@@ -1,13 +1,13 @@
 <?php
 namespace Core;
 class Application{
-    private $class;
+    private static $class;
     protected Router $router;
     protected Request $request;
     protected Response $response;
     private  function __construct()
     {   
-        $this->class=$this;
+        self::$class=$this;
         $this->request=new Request;
         $this->router=new Router($this->request);
         $this->response= new Response();
@@ -33,10 +33,7 @@ class Application{
     
     public static function GETCLASS()
     {   
-        if(!isset(self::$class)){
-            self::$class = new self;
-        };
-        
+    
         return self::$class ;
     }
     public function GETPROPERTY(string $property) : mixed
