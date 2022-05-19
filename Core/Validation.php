@@ -1,5 +1,5 @@
 <?php
-namespace App\Core;
+namespace Core;
 abstract class Validation
 {
     public $errors;
