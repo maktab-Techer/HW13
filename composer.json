@@ -13,6 +13,7 @@
         }
     ],
     "require": {
-        "opis/database": "^4.1"
+        "vlucas/phpdotenv": "^5.0",
+        "opis/database": "^4.0"
     }
 }

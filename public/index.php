@@ -2,8 +2,10 @@
 
 use Core\Application;
 
-
 require_once dirname(__DIR__).'/vendor/autoload.php';
+$dotenv = Dotenv\Dotenv::createImmutable(dirname(__DIR__));
+$dotenv->load();
+
 
 $app=Application::GETCLASS();
 $app->get('/',[  App\Controller\showController::class, "home"]);
@@ -13,7 +15,7 @@ $app->get('/register',[  App\Controller\showController::class, "register"]);
 
 
 
-$app->run();
+// $app->run();
 
 
 ?>
