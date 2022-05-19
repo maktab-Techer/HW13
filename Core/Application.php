@@ -5,7 +5,7 @@ class Application{
     protected Router $router;
     protected Request $request;
     protected Response $response;
-    private  function __construct()
+    public  function __construct()
     {   
         self::$class=$this;
         $this->request=new Request;

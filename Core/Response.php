@@ -7,7 +7,7 @@ class Response{
     {
         http_response_code($code);
     }
-    public function putHeader(string $path)
+    public function setHeader(string $path)
     {
         header("location:".$path);
     }

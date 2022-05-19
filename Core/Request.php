@@ -9,9 +9,22 @@ class Request {
          $path :
          substr($path ,0,$index);
     }
-    public function getMethod()
-    {
-       return strtolower($_SERVER["REQUEST_METHOD"]) ;
+    public function getMethod(): string
+    {   
+        $method=strtolower($_SERVER["REQUEST_METHOD"]);
+        if($method==="get")
+        {
+            return $method;
+        }
+        if(isset($_POST["_method"]) && $_POST["_method"]=="put")
+        {
+            return "put";
+        }elseif(isset($_POST["_method"]) && $_POST["_method"]=="delete"){
+            return "delete";
+
+        }
+        return $method;
+        
     }
 
 }

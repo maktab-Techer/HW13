@@ -7,7 +7,8 @@ $dotenv = Dotenv\Dotenv::createImmutable(dirname(__DIR__));
 $dotenv->load();
 
 
-$app=Application::GETCLASS();
+$app=new Application;
+
 $app->get('/',[  App\Controller\showController::class, "home"]);
 $app->get('/Dashboard',[  App\Controller\showController::class, "Dashboard"]);
 $app->get('/login',[  App\Controller\showController::class, "login"]);
@@ -15,7 +16,7 @@ $app->get('/register',[  App\Controller\showController::class, "register"]);
 
 
 
-// $app->run();
+$app->run();
 
 
 ?>

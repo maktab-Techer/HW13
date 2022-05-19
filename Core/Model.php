@@ -2,7 +2,7 @@
 
 namespace App\Core;
 
-use App\Core\DB\MySqlDatabase;
+use Core\DB\Connection\MySqlConnection;
 
 abstract class Model{
 
@@ -12,9 +12,10 @@ abstract class Model{
 
     public function __construct()
     {
-      
+        $this->conn=$db = new Database(MySqlConnection::getInstance()->getConnection());
+        $this->table = $this->getTable();
     }
-    public static function do(){
+    public static function GETCLASS(){
         return new static;
     }
     abstract protected function getTable(): string;
@@ -29,7 +30,7 @@ abstract class Model{
     }
     public function create(array $data)
     {
-       
+        $this->db->insert($data)->into($this->table);
     }
     public function delete($id){
         
