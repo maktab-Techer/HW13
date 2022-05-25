@@ -16,11 +16,17 @@
   </div>
   
   <!-- Checkbox -->
-
+  <div class="form-check d-flex justify-content-center mb-4">
+    <select name="role" class="browser-default custom-select">
+      <option value="admin">admin</option>
+      <option value="doctor">doctor</option>
+      <option value="patient">patient</option>
+    </select>
+  </div>
   <!-- Submit button -->
   <button type="submit" class="btn btn-primary btn-block mb-4">Sign up</button>
 
   <!-- Register buttons -->
 </form>
-<a href="register" class="btn btn-primary w-25">register</a>
+
   </div>

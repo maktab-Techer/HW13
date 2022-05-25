@@ -22,6 +22,14 @@ class Application{
     {
         $this->router->post($path ,$callback);
     }
+    public function put(string $path , $callback)
+    {
+        $this->router->put($path ,$callback);
+    } 
+    public function delete(string $path , $callback)
+    {
+        $this->router->delete($path ,$callback);
+    }
     /**
      * run all Application
      */

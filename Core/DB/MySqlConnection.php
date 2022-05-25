@@ -1,20 +1,25 @@
 <?php
 
-namespace Core\DB\Connection;
+namespace Core\DB;
 
 use Opis\Database\Connection;
 class MySqlConnection implements ConnectionInterface
 {
     private static $instance = null;
-    private $host = $_ENV["HOST_DB"];
-    private $name = $_ENV["NAME_DB"];
-    private $user = $_ENV["USER_DB"];
-    private $pass = $_ENV["PASSWORD_DB"];
+    private $host ;
+    private $name ;
+    private $user ;
+    private $pass ;
 
     private Connection $conn;
 
     private function __construct()
-    {   
+    {      
+        $this->host=$_ENV["HOST_DB"];
+        $this->name = $_ENV["NAME_DB"];
+        $this->user = $_ENV["USER_DB"];
+        $this->pass = $_ENV["PASSWORD_DB"];
+        
         $dsn="mysql:host={$this->host};dbname={$this->name}" ;
         $this->conn = new Connection($dsn,$this->user,$this->pass);
         $this->conn->options(
@@ -24,7 +29,7 @@ class MySqlConnection implements ConnectionInterface
                 \PDO::ATTR_DEFAULT_FETCH_MODE => \PDO::FETCH_ASSOC,
                 \PDO::ATTR_EMULATE_PREPARES   => false,
             ]
-        )
+                   );
       
     }
 

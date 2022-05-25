@@ -1,17 +1,17 @@
 <div class="container d-flex flex-column justify-content-center max-width: 100%; ">
-<form>
+<form method="post" action="register">
   <!-- 2 column grid layout with text inputs for the first and last names -->
 
   <div class="row mb-4">
     <div class="col">
       <div class="form-outline">
-        <input type="text" id="form3Example1" class="form-control" />
+        <input type="text" name="name" id="form3Example1" class="form-control" />
         <label class="form-label" for="form3Example1">First name</label>
       </div>
     </div>
     <div class="col">
       <div class="form-outline">
-        <input type="text" id="form3Example2" class="form-control" />
+        <input type="text" name="family_name" id="form3Example2" class="form-control" />
         <label class="form-label" for="form3Example2">Last name</label>
       </div>
     </div>
@@ -19,45 +19,53 @@
 
   <!-- Email input -->
   <div class="form-outline mb-4">
-    <input type="email" id="form3Example3" class="form-control" />
+    <input type="email" name="email" id="form3Example3" class="form-control" />
     <label class="form-label" for="form3Example3">Email address</label>
   </div>
   
   <!-- Password input -->
   <div class="form-outline mb-4">
-    <input type="password" id="form3Example4" class="form-control" />
+    <input type="password" name="password" id="form3Example4" class="form-control" />
     <label class="form-label" for="form3Example4">Password</label>
   </div>
-  
-  <!-- Checkbox -->
-  <div class="form-check d-flex justify-content-center mb-4">
-    <input class="form-check-input me-2" type="checkbox" value="" id="form2Example33" checked />
-    <label class="form-check-label" for="form2Example33">
-      Subscribe to our newsletter
-    </label>
+
+    <!-- description -->
+    <div class="form-outline mb-4" id="description1">
+    <textarea  name="description" id="form3Example5" class="form-control" /> </textarea>
+    <label class="form-label" for="form3Example5">description</label>
   </div>
-  
+  <!-- select -->
+  <div class="form-check d-flex justify-content-center mb-4">
+    <select id="selectShow" name="role" class="browser-default custom-select">
+      <option value="patient">patient</option>
+      <option value="admin">admin</option>
+      <option value="doctor">doctor</option>
+    </select>
+  </div>
+
+
   <!-- Submit button -->
   <button type="submit" class="btn btn-primary btn-block mb-4">Sign up</button>
 
-  <!-- Register buttons -->
-  <div class="text-center">
-    <p>or sign up with:</p>
-    <button type="button" class="btn btn-primary btn-floating mx-1">
-      <i class="fab fa-facebook-f"></i>
-    </button>
-    
-    <button type="button" class="btn btn-primary btn-floating mx-1">
-      <i class="fab fa-google"></i>
-    </button>
-
-    <button type="button" class="btn btn-primary btn-floating mx-1">
-      <i class="fab fa-twitter"></i>
-    </button>
-
-    <button type="button" class="btn btn-primary btn-floating mx-1">
-      <i class="fab fa-github"></i>
-    </button>
-  </div>
+ 
+  
 </form>
   </div>
+
+<script  >
+  
+  // document.addEventListener('DOMContentLoaded', (event) => {
+    console.log("hello")
+    let selectEl = document.getElementById('selectShow');
+   
+    selectEl.addEventListener('change', (e) => {
+      if (e.target.value == 'patient') {
+        document.getElementById('description1').style.display = 'block';
+      } else {
+        document.getElementById('description1').style.display = 'none';
+      }
+    });
+  // })
+
+
+</script>

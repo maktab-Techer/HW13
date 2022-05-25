@@ -1,3 +1,4 @@
+
 <div id="preview" class="preview">
     <div style="display: none;"></div>
     <div >
@@ -26,33 +27,40 @@
         </div>
         <div data-draggable="true" class="" style="position: relative;" draggable="false">
             <!---->
+            <!----------------- table----------------------------------- -->
             <div class="mdb-placeholder" data-v-271253ee=""></div>
+
             <section draggable="false" class="container pt-5" data-v-271253ee="">
+                
                 <section class="mb-10">
-                    <h2 class="fw-bold mb-4 ps-4">Frequently asked questions</h2>
-                    <div class="accordion accordion-flush" id="accordionFlushExample">
-                        <div class="accordion-item">
-                            <h2 class="accordion-header" id="flush-headingOne"> <button class="accordion-button" type="button" data-mdb-toggle="collapse" data-mdb-target="#flush-collapseOne" aria-expanded="true" aria-controls="flush-collapseOne"> <strong>Anim pariatur cliche reprehenderit?</strong> </button> </h2>
-                            <div id="flush-collapseOne" class="accordion-collapse collapse show" aria-labelledby="flush-headingOne" data-mdb-parent="#accordionFlushExample" style="">
-                                <div class="accordion-body text-muted">Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.</div>
+                <div class="w-25">
+                    <form class="d-flex " method="put" action="/"  role="search">
+                        <input type="hidden" name="_method" value="put">
+                        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                        <button class="btn btn-outline-success" type="submit">Search</button>
+                    </form>
+                </div>
+                    <?php         
+                        
+                    
+                    ?>
+                    
+                    <div row> 
+
+                        
+                        <div class="card" style="width: 18rem;">
+                            <img src="..." class="card-img-top" alt="...">
+                            <div class="card-body">
+                                <h3 class="card-title">name</h3>
+                                <h6 class="card-title">تخصص</h6>
+                                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
                             </div>
                         </div>
-                        <div class="accordion-item">
-                            <h2 class="accordion-header" id="flush-headingTwo"> <button class="accordion-button collapsed" type="button" data-mdb-toggle="collapse" data-mdb-target="#flush-collapseTwo" aria-expanded="false" aria-controls="flush-collapseTwo"> <strong>Non cupidatat skateboard dolor brunch?</strong> </button> </h2>
-                            <div id="flush-collapseTwo" class="accordion-collapse collapse" aria-labelledby="flush-headingTwo" data-mdb-parent="#accordionFlushExample" style="">
-                                <div class="accordion-body">Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.</div>
-                            </div>
-                        </div>
-                        <div class="accordion-item">
-                            <h2 class="accordion-header" id="flush-headingThree"> <button class="accordion-button collapsed" type="button" data-mdb-toggle="collapse" data-mdb-target="#flush-collapseThree" aria-expanded="false" aria-controls="flush-collapseThree"> <strong>Praesentium voluptatibus temporibus consequatur non aspernatur?</strong> </button> </h2>
-                            <div id="flush-collapseThree" class="accordion-collapse collapse" aria-labelledby="flush-headingThree" data-mdb-parent="#accordionFlushExample" style="">
-                                <div class="accordion-body">Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit optio vitae inventore autem fugiat rerum sed laborum. Natus recusandae laboriosam quos pariatur corrupti id dignissimos deserunt, praesentium voluptatibus temporibus consequatur non aspernatur laborum rerum nemo dolorem libero inventore provident exercitationem sunt totam aperiam. Facere sunt quos commodi obcaecati temporibus alias amet! Quam quisquam laboriosam quae repellendus non cum adipisci odio?</div>
-                            </div>
-                        </div>
+                        
                     </div>
                 </section>
             </section>
-            <!---->
+            <!-------------------------------------------------------------------->
         </div>
     </div>
 </div>

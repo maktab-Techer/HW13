@@ -26,18 +26,18 @@ class Router {
     public function post(string $path , mixed  $callback)
     {   
         $this->paths['post'][$path]=$callback;
-        return $this->router;
+        return $this;
 
     }
-    public function put(string $path, $callback): array
+    public function put(string $path, $callback)
     {
         $this->router['put'][$path] = $callback;
-        return $this->router;
+        return $this;
     }
-    public function delete(string $path, $callback): array
+    public function delete(string $path, $callback)
     {
         $this->router['delete'][$path] = $callback;
-        return $this->router;
+        return $this;
     }
     /**
      * router
