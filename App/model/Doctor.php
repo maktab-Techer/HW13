@@ -3,6 +3,7 @@ namespace App\model;
 
 use Core\Model;
 use Core\Validation;
+use Opis\Database\SQL\Select;
 
 class Doctor extends Model{
 
@@ -17,4 +18,6 @@ class Doctor extends Model{
             'password' => [Validation::required],
         ];
     }
+
+    
 }

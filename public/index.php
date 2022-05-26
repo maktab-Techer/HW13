@@ -9,24 +9,24 @@ $dotenv = Dotenv\Dotenv::createImmutable(dirname(__DIR__));
 $dotenv->load();
 
 
-// $app=new Application;
+$app=new Application;
 
-// $app->get('/',[  App\Controller\showController::class, "home"]);
-// $app->put('/',[  App\Controller\showController::class, ""]);
+$app->get('/',[  App\Controller\showController::class, "home"]);
+$app->put('/',[  App\Controller\showController::class, ""]);
 
-// $app->get('/Dashboard',[  App\Controller\showController::class, "Dashboard"]);
+$app->get('/Dashboard',[  App\Controller\showController::class, "Dashboard"]);
 
-// $app->get('/login',[  App\Controller\showController::class, "login"]);
-// $app->post('/login',[  App\Controller\AuthController::class, "doLogin"]);
+$app->get('/login',[  App\Controller\showController::class, "login"]);
+$app->post('/login',[  App\Controller\AuthController::class, "doLogin"]);
 
-// $app->get('/register',[  App\Controller\showController::class, "register"]);
-// $app->post('/register',[  App\Controller\AuthController::class, "doRegister"]);
-
-
+$app->get('/register',[  App\Controller\showController::class, "register"]);
+$app->post('/register',[  App\Controller\AuthController::class, "doRegister"]);
 
 
 
-// $app->run();
+
+
+$app->run();
 
 // $a = [1, 2, 3, 4, 5];
 // $b = ['one', 'two', 'three', 'four', 'five'];

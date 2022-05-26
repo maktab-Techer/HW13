@@ -12,15 +12,17 @@ class View
         if($data!=null)
         foreach ($data as $key => $value) {
             $$key = $value;
-            echo'kay '.$$key;
-            // var_dump($value);
-            echo"<br>";
+            // echo'kay '.$$key;
+            // // var_dump($value);
+            // echo"<br>";
            
         }
-        
+        $list=$data;
         $main = $this->get_ob('Main');
         $content = $this->get_ob( $path,"layout");
+        $m4 = $this->get_ob( '_404',"layout");
 
+           $this->putReplace('{{top}}', $m4,$main);
        echo  $this->putReplace('{{Content}}', $content,$main);
       
     }
