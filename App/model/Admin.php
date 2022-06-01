@@ -7,7 +7,7 @@ use Core\Validation;
 class Admin extends Model{
 protected function getTable(): string
 {
-    return "Admin";
+    return "admin";
 
 }
 public function getRules(): array

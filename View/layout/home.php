@@ -12,9 +12,20 @@
                             <div class="d-flex justify-content-center align-items-center h-100">
                                 <div class="row d-flex justify-content-center">
                                     <div class="col-lg-8">
-                                        <div class="text-white">
-                                            <h2 class="mb-4 px-4 px-md-5 display-3 fw-bold ls-tight"> <span autocompleted="">Welcome</span> <br> <span class="">Clinic</span> </h2>
-                                            <p class="text-white lead mb-0 px-4 px-md-5">Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima officia consequatur adipisci tenetur repudiandae rerum quos.</p>
+                                        <div class="text-white text-center">
+                                            <h2 class="mb-4 px-4 px-md-5 display-3 fw-bold ls-tight">  Welcome Clinic </h2>
+                                            <p class="text-white  lead mb-0 px-4 px-md-5">
+                                                <?php if( Core\Login::loginCheck()){  ?>
+                                                    <p>
+                                                        <h3>
+                                                        <?php echo   Core\Login::getUserNameCookie();         ?>
+                                                        </h3>
+                                                    </p>
+
+                                                <?php }else{  ?>
+                                                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima officia consequatur adipisci tenetur repudiandae rerum quos.
+                                                <?php }  ?>
+                                            </p>
                                         </div>
                                     </div>
                                 </div>
@@ -33,31 +44,43 @@
             <section draggable="false" class="container pt-5" data-v-271253ee="">
                 
                 <section class="mb-10">
-                <div class="w-25">
-                    <form class="d-flex " method="put" action="/"  role="search">
+                <div class="w-25 py-2">
+                    <form class="d-flex " method="post" action="/"  role="search">
                         <input type="hidden" name="_method" value="put">
-                        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
                         <button class="btn btn-outline-success" type="submit">Search</button>
+                        <input class="form-control me-2" name="doctor_search_bar" type="search" placeholder="Search" value="<?php echo $search ??''  ?>" aria-label="Search">
                     </form>
                 </div>
-                    <?php         
-                        
-                    
-                    ?>
-                    
-                    <div row> 
-
-                        
-                        <div class="card" style="width: 18rem;">
-                            <img src="..." class="card-img-top" alt="...">
-                            <div class="card-body">
-                                <h3 class="card-title">name</h3>
-                                <h6 class="card-title">تخصص</h6>
-                                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                    <?php 
+                    // $search  ;
+                    //     var_dump($search);         
+                        // var_dump(Core\Application::GETCLASS()->GETPROPERTY('storage')."image/doctor-character-background_defult.png");
+                        //      file_get_contents(Core\Application::GETCLASS()->GETPROPERTY('storage')."image/doctor-character-background_defult.png");
+                        $count_hagdfk=0;
+                    foreach($doctors as $doctor):
+                        $count_hagdfk++;
+                        if(fmod($count_hagdfk,4)==1):?>
+                            <div class="row  gx-4 py-2">
+                        <?php endif;  ?>
+                        <div class="col"> 
+                            
+                            <div class="card" style="width: 18rem;">
+                                <img
+                                 src='<?=strlen($doctor['img'])  ?>' 
+                                 class="card-img-top" 
+                                 alt="...">
+                                <div class="card-body">
+                                    <h3 class="card-title"><?=$doctor['name'] ?></h3>
+                                    <h6 class="card-title"><?=$doctor['specialty'] ?></h6>
+                                    <p class="card-text"><?=$doctor['description'] ?></p>
+                                </div>
                             </div>
+                            
+                        <?php if(fmod($count_hagdfk,3)==0):?>
                         </div>
-                        
+                        <?php endif;  ?>
                     </div>
+                    <?php endforeach; ?>
                 </section>
             </section>
             <!-------------------------------------------------------------------->

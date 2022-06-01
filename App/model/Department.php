@@ -5,18 +5,15 @@ use Core\Model;
 use Core\Validation;
 use Opis\Database\SQL\Select;
 
-class Doctor extends Model{
+class Department extends Model{
 
     protected function getTable():string
     {
-        return "doctor";
+        return "department";
     }
     public function getRules(): array   
     {
-        return [
-            'email' => [Validation::required, Validation::email],
-            'password' => [Validation::required],
-        ];
+        return [ ];
     }
    
 

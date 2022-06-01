@@ -31,12 +31,12 @@ class Router {
     }
     public function put(string $path, $callback)
     {
-        $this->router['put'][$path] = $callback;
+        $this->paths['put'][$path] = $callback;
         return $this;
     }
     public function delete(string $path, $callback)
     {
-        $this->router['delete'][$path] = $callback;
+        $this->paths['delete'][$path] = $callback;
         return $this;
     }
     /**
@@ -48,7 +48,7 @@ class Router {
     {
         $path=$this->request->getPath();
         $method=$this->request->getMethod();
-       
+      
         $callback=$this->paths[$method][$path] ?? false; 
         // var_dump($callback);
         if($callback==false){

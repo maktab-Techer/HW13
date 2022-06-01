@@ -29,4 +29,3 @@ class Request {
 
 }
 
-// var_dump($_SERVER);

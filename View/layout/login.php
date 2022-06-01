@@ -1,17 +1,32 @@
+<form method="post" action="login">
 <div class="container  d-flex flex-column d-flex align-items-center  justify-content-center max-width: 100%; ">
+  <div class="text-danger">
 
-    <h2>login </h2>
- 
+    <?php 
+    if(isset($error) )
+    foreach($error as $err):
+    ?>
+    <p>
+      <strong>
+      <?= $err; ?>
+      </strong>
+    </p>
+    <?php endforeach; ?>
+
+   </div>
+
+    <h2 class="text-center">login </h2>
+
 
   <!-- Email input -->
   <div class="form-outline mb-4">
-    <input type="email" id="form3Example3" class="form-control" />
+    <input type="text" id="form3Example3" name="user" class="form-control" />
     <label class="form-label" for="form3Example3">Email address</label>
   </div>
   
   <!-- Password input -->
   <div class="form-outline mb-4">
-    <input type="password" id="form3Example4" class="form-control" />
+    <input type="password" id="form3Example4" name="password" class="form-control" />
     <label class="form-label" for="form3Example4">Password</label>
   </div>
   
@@ -24,9 +39,10 @@
     </select>
   </div>
   <!-- Submit button -->
-  <button type="submit" class="btn btn-primary btn-block mb-4">Sign up</button>
+  <button type="submit" class="btn btn-primary btn-block mb-4 ">Sign up</button>
 
   <!-- Register buttons -->
-</form>
 
-  </div>
+
+</div>
+</form>

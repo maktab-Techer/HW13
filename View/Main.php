@@ -9,7 +9,7 @@
   
 <!-- CSS only -->
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
-
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.3/font/bootstrap-icons.css">
 </head>
 
 <body>
@@ -24,27 +24,36 @@
         <li class="nav-item">
           <a class="nav-link active" aria-current="page" href="/">Home</a>
         </li>
+        <?php 
+        // var_dump(Core\Login::loginCheck());
+        if(!Core\Login::loginCheck()): ?>
         <li class="nav-item">
           <a class="nav-link" href="register">Register</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="login">Login</a>
         </li>
+        <?php endif ?>
+
+        <?php if(Core\Login::loginCheck()): ?>
         <li class="nav-item">
           <a class="nav-link " href="Dashboard">Dashboard</a>
         </li>
+        
         <li class="nav-item">
-          <button class="btn btn-danger">LogOut</button>
+          <form action="/" method="post">
+            <button name="logout"  class="btn btn-danger">LogOut</button>
+          </form>
         </li>
+        <?php endif ?>
+            
+          
       </ul>
     </div>
   </div>
 </nav>
 
 
-
-
-{{top}}
 
 {{Content}}
 

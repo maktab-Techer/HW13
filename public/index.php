@@ -2,19 +2,25 @@
 
 use Core\Application;
 use Core\DB\MySqlConnection;
+use Opis\Database\Connection;
 use Opis\Database\Database;
 
 require_once dirname(__DIR__).'/vendor/autoload.php';
 $dotenv = Dotenv\Dotenv::createImmutable(dirname(__DIR__));
 $dotenv->load();
+//-----------------------------------//---------------------------------------------------------------------//------
 
-
-$app=new Application;
+$app=new Application;                                                                               
 
 $app->get('/',[  App\Controller\showController::class, "home"]);
-$app->put('/',[  App\Controller\showController::class, ""]);
+$app->post('/',[  App\Controller\AuthController::class, "logout"]);
+$app->put('/',[  App\Controller\SearchController::class, "doctorSearchBarHome"]);
 
 $app->get('/Dashboard',[  App\Controller\showController::class, "Dashboard"]);
+
+$app->put('/DashboardAdmin',[  App\Controller\AdminController::class, "updateControlMethod"]);
+$app->delete('/DashboardAdmin',[  App\Controller\AdminController::class, "deleteControlMethod"]);
+$app->post('/DashboardAdmin',[  App\Controller\AdminController::class, "addDepartment"]);
 
 $app->get('/login',[  App\Controller\showController::class, "login"]);
 $app->post('/login',[  App\Controller\AuthController::class, "doLogin"]);
@@ -23,10 +29,12 @@ $app->get('/register',[  App\Controller\showController::class, "register"]);
 $app->post('/register',[  App\Controller\AuthController::class, "doRegister"]);
 
 
-
-
-
 $app->run();
+// ------------------------------------//-------------------------------------------------------------//-------------
+
+// echo'<pre>';
+// var_dump(hash_algos());
+// echo'</pre>';
 
 // $a = [1, 2, 3, 4, 5];
 // $b = ['one', 'two', 'three', 'four', 'five'];
@@ -37,12 +45,68 @@ $app->run();
 
 
 
+
+
 // $db = new Database(MySqlConnection::getInstance()->getConnection());
 // echo"<pre>";
 // var_dump(
 // $db->from("doctor")->select()->all()
 // );
 // echo"</pre>";
+
+
+// $host=$_ENV["HOST_DB"];
+// $name = $_ENV["NAME_DB"];
+// $user = $_ENV["USER_DB"];
+// $pass = $_ENV["PASSWORD_DB"];
+
+
+
+// $connection = new Connection(
+//     "mysql:$host=localhost;dbname=$name",
+//     $user,
+//     $pass
+// );
+// $connection->options(
+//     [
+//  \PDO::MYSQL_ATTR_INIT_COMMAND => "SET NAMES 'utf8'",
+//  \PDO::ATTR_ERRMODE            => \PDO::ERRMODE_EXCEPTION,
+//  \PDO::ATTR_DEFAULT_FETCH_MODE => \PDO::FETCH_ASSOC,
+//  \PDO::ATTR_EMULATE_PREPARES   => false,
+// ]
+// );
+
+// $db = new Database($connection);
+
+
+// echo'<pre>';
+//     var_dump(
+//         $db
+        
+//         ->from('doctor')
+//              ->join('doctor_patient', function($join){
+//                 $join->on('doctor.id','doctor_patient.id_doctor');
+//              })
+//              ->select()
+//              ->all()
+// );
+// echo'</pre>';
+
+
+// $role=\Core\Login::getRoleCookie();
+
+
+
+//        $namespace= trim('App\model\ ') ;
+
+//        $model= new ($namespace.$role);
+     
+       
+//       var_dump($model->GETCLASS()->all())  ;
+
+
+
+
 
 ?>
 

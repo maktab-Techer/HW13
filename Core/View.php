@@ -8,21 +8,11 @@ class View
         $this->ViewPath=dirname(__DIR__ )."/View/";
     }
   public function Show(string $path, array $data = null )
-    {   
-        if($data!=null)
-        foreach ($data as $key => $value) {
-            $$key = $value;
-            // echo'kay '.$$key;
-            // // var_dump($value);
-            // echo"<br>";
-           
-        }
-        $list=$data;
+    { 
+        
         $main = $this->get_ob('Main');
-        $content = $this->get_ob( $path,"layout");
-        $m4 = $this->get_ob( '_404',"layout");
+        $content = $this->get_ob( $path,"layout",$data);
 
-           $this->putReplace('{{top}}', $m4,$main);
        echo  $this->putReplace('{{Content}}', $content,$main);
       
     }
@@ -32,8 +22,12 @@ class View
 
  
 
-    public function get_ob(string $path ,string $file='' )
+    public function get_ob(string $path ,string $file=''  ,$data=null)
     {   
+        if($data!=null)
+        foreach ($data as $key => $value) {
+            $$key = $value;
+        }
 
         ob_start();
         include $this->ViewPath. $file."/".$path.".php";

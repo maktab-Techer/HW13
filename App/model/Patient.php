@@ -7,7 +7,7 @@ use Core\Validation;
 class Patient extends Model{
     protected function getTable():string    
     {
-        return "Patient";
+        return "patient";
     }
     public function getRules(): array
     {

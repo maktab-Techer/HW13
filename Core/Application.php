@@ -1,12 +1,15 @@
 <?php
 namespace Core;
 class Application{
+    public $storage;
+    public string $rootPath;
     private static $class;
     protected Router $router;
     protected Request $request;
     protected Response $response;
     public  function __construct()
-    {   
+    {   $this->storage=dirname(__DIR__)."/Storage/";
+       $this->rootPath=dirname(__DIR__);
         self::$class=$this;
         $this->request=new Request;
         $this->router=new Router($this->request);
@@ -15,7 +18,7 @@ class Application{
 
     public function get(string $path , $callback)
     {
-        // var_dump($this);
+       
         $this->router->get($path ,$callback);
     }
     public function post(string $path , $callback)
